@@ -1,0 +1,64 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bg: #fbf6ef; /** Page background — warm cream, like flour dust on a pizzeria counter. */
+  --color-surface: #ffffff; /** Elevated surface background for cards and inputs, set apart from the cream page background. */
+  --color-fg: #2a1b12; /** Primary text color — near-black espresso brown. Passes WCAG AA (4.5:1+) against color-bg. */
+  --color-fg-muted: #6b5a4e; /** Secondary/muted text, e.g. captions and helper copy. */
+  --color-fg-inverse: #ffffff; /** Text/icon color for use on top of dark or saturated backgrounds like the primary button. */
+  --color-primary: #b3261e; /** Brand primary — wood-fired-oven tomato red, used for main CTAs and emphasis. */
+  --color-primary-hover: #8f1e17; /** Darker red for hover/active states on primary actions. */
+  --color-secondary: #4b7f52; /** Basil-green accent for secondary emphasis (e.g. fresh/veg callouts). */
+  --color-accent: #e3a008; /** Golden crust/cheese accent used for badges and chips. */
+  --color-border: #e4d6c3; /** Default hairline border color for cards, inputs and dividers. */
+  --color-shadow: #c9b8a2; /** Warm neutral tint used for drop shadows so elevation reads as warm, not cold gray. */
+  --space-1: 4px; /** Smallest spacing step — tight gaps like icon-to-label. */
+  --space-2: 8px; /** Compact spacing — chip/button internal vertical padding. */
+  --space-3: 12px; /** Default control spacing — input padding, small gaps. */
+  --space-4: 16px; /** Base spacing unit — button/card horizontal padding, stack gaps. */
+  --space-5: 24px; /** Comfortable spacing — card padding, section gaps. */
+  --space-6: 32px; /** Large spacing — between major layout sections. */
+  --radius-sm: 4px; /** Small corner radius — form controls, tags. */
+  --radius-md: 8px; /** Medium corner radius — buttons. */
+  --radius-lg: 16px; /** Large corner radius — cards and modals. */
+  --radius-pill: 999px; /** Full pill radius — chips and badges. */
+  --font-size-sm: 14px; /** Small text — captions, chip labels, helper text. */
+  --font-size-md: 16px; /** Body text size. */
+  --font-size-lg: 20px; /** Subheading text size. */
+  --font-size-xl: 28px; /** Display heading size, e.g. hero title. */
+  --border-width-thin: 1px; /** Default hairline border width. */
+  --border-width-thick: 2px; /** Emphasized border width, e.g. focus states. */
+  --line-height-tight: 1.2; /** Unitless line-height for headings. */
+  --line-height-normal: 1.5; /** Unitless line-height for body copy. */
+  --font-family-heading: 'Fraunces', Georgia, serif; /** Display serif for headings, evokes a trattoria menu board. */
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /** Body sans-serif for legible UI text. */
+  --font-weight-regular: 400; /** Regular body weight. */
+  --font-weight-semibold: 600; /** Semibold weight for labels and emphasis. */
+  --font-weight-bold: 700; /** Bold weight for headings and CTAs. */
+  --shadow-sm: 0px 1px 3px 0px var(--color-shadow); /** Subtle elevation for resting cards and chips. */
+  --shadow-md: 0px 4px 12px 0px var(--color-shadow); /** Raised elevation for hovered cards and popovers. */
+  --border-default: var(--border-width-thin) solid var(--color-border); /** Default hairline border applied to cards and inputs. */
+  --gradient-hero: [object Object],[object Object]; /** Warm oven-glow gradient for hero banners. */
+  --button-primary-background: var(--color-primary); /** Primary button fill. */
+  --button-primary-foreground: var(--color-fg-inverse); /** Primary button label color. */
+  --button-primary-border: var(--color-primary); /** Primary button border color. */
+  --button-primary-radius: var(--radius-md); /** Primary button corner radius. */
+  --button-secondary-background: var(--color-surface); /** Secondary (outline) button fill. */
+  --button-secondary-foreground: var(--color-primary); /** Secondary button label color. */
+  --button-secondary-border: var(--color-primary); /** Secondary button border color. */
+  --button-secondary-radius: var(--radius-md); /** Secondary button corner radius. */
+  --card-default-background: var(--color-surface); /** Default card fill. */
+  --card-default-foreground: var(--color-fg); /** Default card text color. */
+  --card-default-border: var(--color-border); /** Default card border color. */
+  --card-default-radius: var(--radius-lg); /** Default card corner radius. */
+  --chip-default-background: var(--color-accent); /** Default chip/badge fill. */
+  --chip-default-foreground: var(--color-fg); /** Default chip/badge text color. */
+  --chip-default-radius: var(--radius-pill); /** Chip/badge corner radius. */
+  --field-default-background: var(--color-surface); /** Default form control fill. */
+  --field-default-foreground: var(--color-fg); /** Default form control text color. */
+  --field-default-border: var(--color-border); /** Default form control border color. */
+  --field-default-radius: var(--radius-sm); /** Default form control corner radius. */
+  --field-focus-border: var(--color-primary); /** Form control border color when focused. */
+}
