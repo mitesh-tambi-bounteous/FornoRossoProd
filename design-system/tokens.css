@@ -8,8 +8,9 @@
   --color-fg: #2a1b12; /** Primary text color — near-black espresso brown. Passes WCAG AA (4.5:1+) against color-bg. */
   --color-fg-muted: #6b5a4e; /** Secondary/muted text, e.g. captions and helper copy. */
   --color-fg-inverse: #ffffff; /** Text/icon color for use on top of dark or saturated backgrounds like the primary button. */
-  --color-primary: #b3261e; /** Brand primary — wood-fired-oven tomato red, used for main CTAs and emphasis. */
+  --color-primary: #C82D25; /** Brand primary — wood-fired-oven tomato red, used for main CTAs and emphasis. */
   --color-primary-hover: #8f1e17; /** Darker red for hover/active states on primary actions. */
+  --color-surface-inverse: #151212; /** Near-black inverse surface for the header, footer, and other dark sections. */
   --color-secondary: #4b7f52; /** Basil-green accent for secondary emphasis (e.g. fresh/veg callouts). */
   --color-accent: #e3a008; /** Golden crust/cheese accent used for badges and chips. */
   --color-border: #e4d6c3; /** Default hairline border color for cards, inputs and dividers. */

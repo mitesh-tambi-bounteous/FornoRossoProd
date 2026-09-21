@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Forno Rosso — Figma Mapping Review (FORNOROSSO-STORY-001)</title>
+<style>
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bg: #fbf6ef; /** Page background — warm cream, like flour dust on a pizzeria counter. */
+  --color-surface: #ffffff; /** Elevated surface background for cards and inputs, set apart from the cream page background. */
+  --color-fg: #2a1b12; /** Primary text color — near-black espresso brown. Passes WCAG AA (4.5:1+) against color-bg. */
+  --color-fg-muted: #6b5a4e; /** Secondary/muted text, e.g. captions and helper copy. */
+  --color-fg-inverse: #ffffff; /** Text/icon color for use on top of dark or saturated backgrounds like the primary button. */
+  --color-primary: #b3261e; /** Brand primary — wood-fired-oven tomato red, used for main CTAs and emphasis. */
+  --color-primary-hover: #8f1e17; /** Darker red for hover/active states on primary actions. */
+  --color-secondary: #4b7f52; /** Basil-green accent for secondary emphasis (e.g. fresh/veg callouts). */
+  --color-accent: #e3a008; /** Golden crust/cheese accent used for badges and chips. */
+  --color-border: #e4d6c3; /** Default hairline border color for cards, inputs and dividers. */
+  --color-shadow: #c9b8a2; /** Warm neutral tint used for drop shadows so elevation reads as warm, not cold gray. */
+  --space-1: 4px; /** Smallest spacing step — tight gaps like icon-to-label. */
+  --space-2: 8px; /** Compact spacing — chip/button internal vertical padding. */
+  --space-3: 12px; /** Default control spacing — input padding, small gaps. */
+  --space-4: 16px; /** Base spacing unit — button/card horizontal padding, stack gaps. */
+  --space-5: 24px; /** Comfortable spacing — card padding, section gaps. */
+  --space-6: 32px; /** Large spacing — between major layout sections. */
+  --radius-sm: 4px; /** Small corner radius — form controls, tags. */
+  --radius-md: 8px; /** Medium corner radius — buttons. */
+  --radius-lg: 16px; /** Large corner radius — cards and modals. */
+  --radius-pill: 999px; /** Full pill radius — chips and badges. */
+  --font-size-sm: 14px; /** Small text — captions, chip labels, helper text. */
+  --font-size-md: 16px; /** Body text size. */
+  --font-size-lg: 20px; /** Subheading text size. */
+  --font-size-xl: 28px; /** Display heading size, e.g. hero title. */
+  --border-width-thin: 1px; /** Default hairline border width. */
+  --border-width-thick: 2px; /** Emphasized border width, e.g. focus states. */
+  --line-height-tight: 1.2; /** Unitless line-height for headings. */
+  --line-height-normal: 1.5; /** Unitless line-height for body copy. */
+  --font-family-heading: 'Fraunces', Georgia, serif; /** Display serif for headings, evokes a trattoria menu board. */
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /** Body sans-serif for legible UI text. */
+  --font-weight-regular: 400; /** Regular body weight. */
+  --font-weight-semibold: 600; /** Semibold weight for labels and emphasis. */
+  --font-weight-bold: 700; /** Bold weight for headings and CTAs. */
+  --shadow-sm: 0px 1px 3px 0px var(--color-shadow); /** Subtle elevation for resting cards and chips. */
+  --shadow-md: 0px 4px 12px 0px var(--color-shadow); /** Raised elevation for hovered cards and popovers. */
+  --border-default: var(--border-width-thin) solid var(--color-border); /** Default hairline border applied to cards and inputs. */
+  --gradient-hero: [object Object],[object Object]; /** Warm oven-glow gradient for hero banners. */
+  --button-primary-background: var(--color-primary); /** Primary button fill. */
+  --button-primary-foreground: var(--color-fg-inverse); /** Primary button label color. */
+  --button-primary-border: var(--color-primary); /** Primary button border color. */
+  --button-primary-radius: var(--radius-md); /** Primary button corner radius. */
+  --button-secondary-background: var(--color-surface); /** Secondary (outline) button fill. */
+  --button-secondary-foreground: var(--color-primary); /** Secondary button label color. */
+  --button-secondary-border: var(--color-primary); /** Secondary button border color. */
+  --button-secondary-radius: var(--radius-md); /** Secondary button corner radius. */
+  --card-default-background: var(--color-surface); /** Default card fill. */
+  --card-default-foreground: var(--color-fg); /** Default card text color. */
+  --card-default-border: var(--color-border); /** Default card border color. */
+  --card-default-radius: var(--radius-lg); /** Default card corner radius. */
+  --chip-default-background: var(--color-accent); /** Default chip/badge fill. */
+  --chip-default-foreground: var(--color-fg); /** Default chip/badge text color. */
+  --chip-default-radius: var(--radius-pill); /** Chip/badge corner radius. */
+  --field-default-background: var(--color-surface); /** Default form control fill. */
+  --field-default-foreground: var(--color-fg); /** Default form control text color. */
+  --field-default-border: var(--color-border); /** Default form control border color. */
+  --field-default-radius: var(--radius-sm); /** Default form control corner radius. */
+  --field-focus-border: var(--color-primary); /** Form control border color when focused. */
+}
+
+</style>
+<style>
+/* Forno Rosso — prototype utilities & components
+   Every value below is a var() reference to a token rendered in tokens.css.
+   No literal colors, sizes, or shadows are hardcoded here. */
+
+/* ---------- Base ---------- */
+
+.surface-page {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+}
+
+/* ---------- Typography ---------- */
+
+.text-heading {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-fg);
+}
+
+.text-subheading {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-fg);
+}
+
+.text-body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-fg);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.text-muted {
+  color: var(--color-fg-muted);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  border-width: var(--border-width-thin);
+  border-style: solid;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--button-primary-background);
+  color: var(--button-primary-foreground);
+  border-color: var(--button-primary-border);
+  border-radius: var(--button-primary-radius);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary-background);
+  color: var(--button-secondary-foreground);
+  border-color: var(--button-secondary-border);
+  border-radius: var(--button-secondary-radius);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg);
+}
+
+/* ---------- Card ---------- */
+
+.card {
+  background-color: var(--card-default-background);
+  color: var(--card-default-foreground);
+  border: var(--border-width-thin) solid var(--card-default-border);
+  border-radius: var(--card-default-radius);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--card-default-foreground);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.card-body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-fg-muted);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.card-footer {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* ---------- Chip ---------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--chip-default-background);
+  color: var(--chip-default-foreground);
+  border-radius: var(--chip-default-radius);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ---------- Form controls ---------- */
+
+.field-label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--field-default-foreground);
+}
+
+.field-input {
+  display: block;
+  width: 100%;
+  padding: var(--space-3);
+  background-color: var(--field-default-background);
+  color: var(--field-default-foreground);
+  border: var(--border-width-thin) solid var(--field-default-border);
+  border-radius: var(--field-default-radius);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+.field-input:focus {
+  outline: none;
+  border-width: var(--border-width-thick);
+  border-color: var(--field-focus-border);
+}
+
+.field-hint {
+  margin-top: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+}
+
+/* ---------- Layout helpers ---------- */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+</style>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--color-bg); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: var(--space-6); }
+
+  .banner {
+    background: var(--color-fg);
+    color: var(--color-fg-inverse);
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+  }
+  .banner h1 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    margin: 0 0 var(--space-2) 0;
+  }
+  .banner p {
+    margin: 0;
+    color: rgba(255,255,255,0.8);
+    max-width: 70em;
+    line-height: var(--line-height-normal);
+  }
+  .banner .tag {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-fg-inverse);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--space-3);
+  }
+
+  section.block {
+    margin-bottom: var(--space-6);
+  }
+  section.block > h2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+  section.block > p.lead {
+    color: var(--color-fg-muted);
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+    max-width: 70em;
+  }
+
+  .render-frame {
+    max-width: 100%;
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+  .render-note {
+    font-size: var(--font-size-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .artboard-card {
+    background: var(--color-surface);
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+    box-shadow: var(--shadow-sm);
+  }
+  .artboard-card h3 {
+    font-family: var(--font-family-heading);
+    margin: 0 0 var(--space-1) 0;
+  }
+  .artboard-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-fg-muted);
+    margin-bottom: var(--space-4);
+  }
+  .kind-chip {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-fg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    padding: 2px var(--space-3);
+    border-radius: var(--radius-pill);
+    margin-right: var(--space-2);
+  }
+
+  table.map-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-3);
+  }
+  table.map-table th, table.map-table td {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    vertical-align: top;
+  }
+  table.map-table th {
+    color: var(--color-fg-muted);
+    font-weight: var(--font-weight-semibold);
+    white-space: nowrap;
+  }
+  table.map-table td.node { white-space: nowrap; font-family: monospace; color: var(--color-fg-muted); }
+  table.map-table td.notes { color: var(--color-fg-muted); max-width: 28em; }
+  .status-chip {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold);
+    padding: 1px var(--space-2);
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+  }
+  .status-existing { background: var(--color-secondary); color: var(--color-fg-inverse); }
+  .status-proposed_new { background: var(--color-accent); color: var(--color-fg); }
+  code.props {
+    font-size: 12px;
+    color: var(--color-fg-muted);
+    white-space: pre-wrap;
+  }
+
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+  .token-card {
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    overflow: hidden;
+  }
+  .token-swatch { height: var(--space-6); }
+  .token-body { padding: var(--space-3); font-size: var(--font-size-sm); }
+  .token-body strong { display: block; color: var(--color-fg); font-family: monospace; }
+  .token-body span { color: var(--color-fg-muted); display: block; margin-top: 2px; }
+
+  .excluded-list, .q-list { list-style: none; margin: 0; padding: 0; }
+  .excluded-list li {
+    padding: var(--space-3);
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+    background: var(--color-surface);
+  }
+
+  .q-card {
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    padding: var(--space-4);
+    margin-bottom: var(--space-3);
+  }
+  .q-card.blocking { border-left: 4px solid var(--color-primary); }
+  .q-card.nonblocking { border-left: 4px solid var(--color-border); }
+  .q-card h4 { margin: 0 0 var(--space-1) 0; font-size: var(--font-size-md); }
+  .q-flag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
+  }
+  .q-flag.blocking { background: var(--color-primary); color: var(--color-fg-inverse); }
+  .q-flag.nonblocking { background: var(--color-border); color: var(--color-fg); }
+  .q-detail { margin: var(--space-2) 0; color: var(--color-fg); }
+  .q-assumption {
+    background: var(--color-bg);
+    border: var(--border-width-thin) dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+  .q-assumption strong { color: var(--color-primary); }
+  .q-options { font-size: var(--font-size-sm); color: var(--color-fg-muted); margin-top: var(--space-2); }
+  .q-options li { margin-bottom: 2px; }
+  .assumed-tag {
+    font-size: 11px;
+    background: var(--color-accent);
+    color: var(--color-fg);
+    padding: 0 var(--space-2);
+    border-radius: var(--radius-sm);
+    margin-left: var(--space-1);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="banner">
+      <div class="tag">Figma-mapping review — not a from-scratch prototype</div>
+      <h1>Forno Rosso — HomePage: Figma → component mapping</h1>
+      <p>
+        This page shows HOW arc read <code>figma-frame.json</code> (node 0:1, "HomePage", file
+        Kzae8FDEX2i6bB6tcai7JX) and mapped it onto proposed code components — it does not redraw
+        the design. <strong>The rendered PNG below is authoritative for visuals.</strong> This
+        project has no existing UI component catalogue (greenfield), so every mapped component is
+        <code>proposed_new</code>. See <code>design-context.json</code> in this same directory for
+        the machine-readable version of everything on this page.
+      </p>
+    </div>
+
+    <section class="block">
+      <h2>Rendered frame (authoritative for visuals)</h2>
+      <p class="lead">Single artboard, 1440×2786 — a home/landing page for a wood-fired pizza restaurant.</p>
+      <img class="render-frame" src="https://bnts-arc-prod-run-output-751510979366.s3.amazonaws.com/ux-design/bounteous/proj_a38d9a83/FORNOROSSO-STORY-001/figma-frame.png?AWSAccessKeyId=ASIA256MLQMTOHTFQEQB&Signature=JIuVTL2P1YFRJoEoGYsYh6fCcnY%3D&x-amz-security-token=IQoJb3JpZ2luX2VjELz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIE%2FO2HE0Qei8nBBTtq1kHvUQ1EXbTOEPuHDG1NsXxyNBAiAnJcT54KOReFd7MvGLhCz%2BVLGfE%2BwghwLvn1wwYSFieirBBQiF%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDc1MTUxMDk3OTM2NiIMLjcjGpeHq1%2Bk%2BTX9KpUF0bz5R%2FUtcPPFxktGrmo5R%2Fi8Z2mFayln86YPA9GpjU42rkylcgtw2lrNwG2IKBWsOxVUinLLrYoViFx64bZ6SGhIYyvUXlWogCuxgx%2F1%2FDgN8jdacW2BUm%2BUZLpyK2OTRRHNOb153I684yEE5Y5lewuT%2FZmNwVCNkCdwVBugb7I5TB%2F4zlnpj7ELTePYNCa24%2BFIdBO%2BGHQw4ToCaZpT0zKAL5TcF0Ixi2u8190Thns0tnw4zYZ9jHCRhK3H7YQ86547BXPAAZT%2FLOl4laNMYa51fJjcny05krsthBR6yuxs0iLY%2FNSxQjfsOnxHzC6LDBdmu2%2Bja2agfVxOVP2zfYeYnn9kJiwvvblSG6KIxn9zuu6BrPOhpaBVWZ9X%2FusdCi%2BjzhuO8Zw%2BB1ArgjGSpelAm%2B8HZIJYfXzi4mw1%2By9QKI5xf0aRtLQmY3ZCCKOcr1ZNwt9E5ZveKvih3Y05O2XIs1%2FYJrKfmOyeoFiAdTfdWTEP8V8hYwvaWmVRlUCwuarvO%2FdURQ%2BIJaSsz%2BJQlkt3ED2Cc5MB5QiElVZh0ZB9hLGOYGa1FOB1ul8s5GOpfKfWq%2FwELF%2F8e9p6mXANhET3EJTL4a0ezQ3X1FOdYp9%2B7qJ8ivCvDqm5IooSk8zkhv2V5%2F0jVWO70%2FdCZgQDXaT4XVKvOhpaOcoGW8uI3tzZ8zray76a0jUqlsQWUWmhUolBntTuudoyG6%2Fw%2F3yQJVmwa0qso%2BDvxaDlhPvjKuTm9PiobBsG2sfqS8kcYNhghesUQ7uPJMLKv1EcBNA0mYOkzkRipAyUaoOijFm66F6q6N3eHoWxgjVn6Kwaze8VmRr2j7RlnVSak5Jqp%2BaM1ETzVOcvVPim%2BgPtXKVL8uY9RB6tSjC52cLVBjqyAXjtHQ4R0OjAgFpjxNUOz4KGKLI8giAkyY%2BKVlMZIG5kTZO%2FynyIQtiVf%2FhCsOtdCXDBVYDC%2BSdvbHlC4YASVUbF2rNVJdPjEkMmJ%2FCQU0AC19rP4K1jGxUkBHOcTM5uSAcze%2BKU3f6VKOUlyCJ6h%2FnpLSbn2bHlunGDLhTFm30P%2B7gKDKdvPocVhnKiOtXaFk0aYfWXOzxqZD4GGVUo9s7qUJD%2FCHHuStnHTRJOouM6sY8%3D&Expires=1790571262" alt="Forno Rosso home page — rendered Figma frame" />
+      <p class="render-note">figma-frame.png — same directory as this file.</p>
+    </section>
+
+    <section class="block">
+      <h2>Artboards</h2>
+      <p class="lead">The canvas (node 0:1) has exactly one direct child — no other screens, revisions, or component masters were found on it.</p>
+      <div class="artboard-card">
+        <h3>home-page <span style="font-family: monospace; font-size: var(--font-size-sm); color: var(--color-fg-muted);">(6:6)</span></h3>
+        <div class="artboard-meta">
+          <span class="kind-chip">screen</span>
+          figma_type: FRAME · bounds: x=-692, y=-450, w=1440, h=2786
+        </div>
+        <p style="margin:0; color: var(--color-fg);">
+          Marketing/ordering home page: header nav, hero CTA, delivery promo banner, featured menu
+          grid (4 pizzas), brand-story section, footer.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Distilled tokens</h2>
+      <p class="lead">
+        The frame's own color/radius/type values, compared against this project's
+        <code>design-system/tokens.json</code>. Roles line up closely with the existing semantic
+        tokens; several exact values drift — each drift has a matching open question below.
+      </p>
+      <div class="token-grid">
+        <div class="token-card">
+          <div class="token-swatch" style="background:#151212;"></div>
+          <div class="token-body">
+            <strong>#151212 — dark surface</strong>
+            <span>Header / hero / footer bg, "Add to Order" button fill. No matching token exists — closest is color-fg (#2a1b12), which is a text color, not a surface.</span>
+          </div>
+        </div>
+        <div class="token-card">
+          <div class="token-swatch" style="background:#C82D25;"></div>
+          <div class="token-body">
+            <strong>#C82D25 — primary red</strong>
+            <span>CTAs, logo badge, nav underline, icon badges. color-primary token is #b3261e — visibly different shade.</span>
+          </div>
+        </div>
+        <div class="token-card">
+          <div class="token-swatch" style="background:#2A7043;"></div>
+          <div class="token-body">
+            <strong>#2A7043 — secondary green</strong>
+            <span>Delivery banner bg, "30 mins" ETA highlight. color-secondary token is #4b7f52 — darker/more saturated here.</span>
+          </div>
+        </div>
+        <div class="token-card">
+          <div class="token-swatch" style="background:#6B6661;"></div>
+          <div class="token-body">
+            <strong>#6B6661 — muted text</strong>
+            <span>Close match to color-fg-muted (#6b5a4e).</span>
+          </div>
+        </div>
+        <div class="token-card">
+          <div class="token-swatch" style="background:#EBE7DF; border-bottom: var(--border-width-thin) solid var(--color-border);"></div>
+          <div class="token-body">
+            <strong>#EBE7DF — card border</strong>
+            <span>Close match to color-border (#e4d6c3).</span>
+          </div>
+        </div>
+        <div class="token-card">
+          <div class="token-swatch" style="background:#FCFAF6; border-bottom: var(--border-width-thin) solid var(--color-border);"></div>
+          <div class="token-body">
+            <strong>#FCFAF6 — page bg</strong>
+            <span>Near-identical to color-bg (#fbf6ef).</span>
+          </div>
+        </div>
+      </div>
+      <p class="lead" style="margin-top: var(--space-4);">
+        Radii: 8px and 16px match radius-md / radius-lg exactly (buttons, cards, story images).
+        18px, 20px (circular icon badges) and 24px (hero image corner) have no exact token — see
+        <em>radius-scale-gaps</em>. Heading font (Fraunces) matches font-family-heading exactly;
+        body font is Geist in Figma vs. Inter in font-family-body (same sans-serif role).
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Component map — grouped by artboard</h2>
+      <p class="lead">
+        Every row is <code>proposed_new</code> since the catalogue is empty. "Reuses …" in Notes
+        means the same proposed component appears again lower on the page — nothing has been built
+        yet for either instance.
+      </p>
+      <div class="artboard-card">
+        <h3>home-page (6:6)</h3>
+        <table class="map-table">
+          <thead>
+            <tr><th>Figma node</th><th>Code component</th><th>Status</th><th>Props</th><th>Notes</th></tr>
+          </thead>
+          <tbody id="map-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Excluded (device chrome / mockup scaffolding)</h2>
+      <p class="lead">
+        None found. This is a desktop web frame (1440px) with no simulated browser chrome, status
+        bar, notch, or on-screen keyboard drawn around it — the canvas's only child is the home-page
+        content frame itself.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Open questions</h2>
+      <p class="lead">Blocking questions first. Each shows arc's assumption, clearly labelled as an assumption awaiting confirmation.</p>
+      <div id="q-body"></div>
+    </section>
+
+  </div>
+
+<script>
+  const componentMap = [
+    { figma_node: "6:7", code_component: "AppHeader", status: "proposed_new", props: { background: "dark-surface", sticky: true }, notes: "Top nav bar: logo, nav links, header actions (ETA status + cart button). Dark near-black background — see missing-dark-surface-token." },
+    { figma_node: "6:8", code_component: "Logo", status: "proposed_new", props: { mark: "F", wordmark: "Forno Rosso" }, notes: "Red circular monogram badge + serif wordmark." },
+    { figma_node: "6:13", code_component: "NavLink", status: "proposed_new", props: { label: "Home", active: true }, notes: "Active state shown with a small red underline rule beneath the label." },
+    { figma_node: "6:16", code_component: "NavLink", status: "proposed_new", props: { label: "Our Menu", active: false }, notes: "Reuses the NavLink proposed for 6:13, inactive variant." },
+    { figma_node: "6:18", code_component: "NavLink", status: "proposed_new", props: { label: "Cart", active: false }, notes: "Reuses the NavLink proposed for 6:13, inactive variant." },
+    { figma_node: "6:20", code_component: "HeaderActions", status: "proposed_new", props: {}, notes: "Groups the delivery-ETA status text and the cart button on the header's trailing edge." },
+    { figma_node: "6:21", code_component: "DeliveryEtaStatus", status: "proposed_new", props: { label: "Estimated delivery:", value: "30 mins", valueColor: "secondary" }, notes: "'30 mins' is styled in secondary green as a live-status highlight. See estimated-delivery-text-scope." },
+    { figma_node: "6:22", code_component: "CartButton", status: "proposed_new", props: { icon: "shopping-cart", count: 3 }, notes: "Translucent white pill on dark header; icon+count side-by-side, not a corner badge. Count is a static placeholder — see cart-count-placeholder." },
+    { figma_node: "6:25", code_component: "HeroSection", status: "proposed_new", props: { background: "dark-surface", heading: "Wood-Fired Pizza, Delivered Hot", headingAccentWord: "Delivered Hot" }, notes: "'Delivered Hot' is an inline primary-red accent span within an otherwise white heading." },
+    { figma_node: "6:27", code_component: "Chip", status: "proposed_new", props: { icon: "flame", label: "Authentic Neapolitan Woodfired", variant: "translucent-on-dark" }, notes: "White @ ~7% opacity pill on dark hero bg. Icon layer is literally named 'fire-extinguisher' but reads as a flame — see fire-extinguisher-icon-name." },
+    { figma_node: "6:33", code_component: "Button", status: "proposed_new", props: { label: "Order Online Now", variant: "primary", icon: "arrow-right", iconPosition: "end" }, notes: "Solid primary-red fill, radius-md — matches button-primary-* shape exactly; color drifts (primary-red-hex-mismatch)." },
+    { figma_node: "6:36", code_component: "Button", status: "proposed_new", props: { label: "Explore Full Menu", variant: "outline-on-dark" }, notes: "Transparent fill, white border/text on dark bg — doesn't match existing button-secondary. See hero-secondary-button-on-dark." },
+    { figma_node: "6:38", code_component: "Media", status: "proposed_new", props: { asset: "figma-asset-6-39-hero-image-wrapper.png", fit: "cover", radius: "24px (recommend radius-lg)" }, notes: "Hero pizza photo, 616×480 rounded rectangle." },
+    { figma_node: "6:40", code_component: "DeliveryBanner", status: "proposed_new", props: { background: "secondary(green)", heading: "Free Delivery On Orders Over $35" }, notes: "Full-bleed green banner; color drifts slightly from color-secondary." },
+    { figma_node: "6:42", code_component: "IconBadge", status: "proposed_new", props: { icon: "truck", variant: "translucent-on-color" }, notes: "White @ ~12.5% opacity circle, 40×40 — same translucent-badge pattern as the hero chip icon." },
+    { figma_node: "6:48", code_component: "StatItem", status: "proposed_new", props: { label: "Average ETA", value: "25 - 35 Min" }, notes: "Right-aligned label/value pair inside the delivery banner." },
+    { figma_node: "6:51", code_component: "StatItem", status: "proposed_new", props: { label: "Pizza Temperature", value: "Piping Hot Guaranteed" }, notes: "Reuses the StatItem proposed for 6:48." },
+    { figma_node: "6:54", code_component: "FeaturedSection", status: "proposed_new", props: { background: "page" }, notes: "Wraps the section heading and the 4-card menu grid." },
+    { figma_node: "6:55", code_component: "SectionHeading", status: "proposed_new", props: { eyebrow: "Chef Recommendations", title: "Popular Sourdough Pizzas", align: "center", divider: true }, notes: "Eyebrow uppercase/semibold red; short red rule under title. See section-divider-inconsistent." },
+    { figma_node: "6:59", code_component: "MenuGrid", status: "proposed_new", props: { columns: 4 }, notes: "Responsive card grid wrapping 4 MenuItemCard instances." },
+    { figma_node: "6:60", code_component: "MenuItemCard", status: "proposed_new", props: { title: "Diavola", price: "$16.50", image: "figma-asset-6-62-featured-grid.png", imageFit: "cover" }, notes: "White card, radius-lg (exact match). CTA maps to Button (variant: dark) at 6:69." },
+    { figma_node: "6:69", code_component: "Button", status: "proposed_new", props: { label: "Add to Order", variant: "dark", icon: "plus" }, notes: "Full-width near-black fill, radius-md (exact match), white label — third button variant. See button-dark-variant-missing." },
+    { figma_node: "6:72", code_component: "MenuItemCard", status: "proposed_new", props: { title: "Funghi Selvatici & Tartufo", price: "$18.00", image: "figma-asset-6-74-featured-grid.png", imageFit: "cover" }, notes: "Reuses the MenuItemCard proposed for 6:60; CTA reuses Button (variant: dark) at 6:69." },
+    { figma_node: "6:84", code_component: "MenuItemCard", status: "proposed_new", props: { title: "Classic Margherita", price: "$14.50", image: "figma-asset-6-86-featured-grid.png", imageFit: "cover" }, notes: "Reuses the MenuItemCard proposed for 6:60; CTA reuses Button (variant: dark) at 6:69." },
+    { figma_node: "6:96", code_component: "MenuItemCard", status: "proposed_new", props: { title: "Prosciutto Crudo e Rucola", price: "$19.00", image: "figma-asset-6-98-featured-grid.png", imageFit: "cover" }, notes: "Reuses the MenuItemCard proposed for 6:60; CTA reuses Button (variant: dark) at 6:69." },
+    { figma_node: "6:108", code_component: "StorySection", status: "proposed_new", props: { background: "page-alt" }, notes: "Two-column brand story: text + feature list (left), image collage (right)." },
+    { figma_node: "6:110", code_component: "SectionHeading", status: "proposed_new", props: { eyebrow: "The Sourdough Secret", title: "Our Passion for the Perfect Crust", align: "left", divider: false }, notes: "Reuses the SectionHeading proposed for 6:55, left-aligned, no divider — see section-divider-inconsistent." },
+    { figma_node: "6:114", code_component: "FeatureListItem", status: "proposed_new", props: { icon: "star", title: "100% Imported San Marzano Tomatoes" }, notes: "Solid red circular icon badge (36×36) + white icon, title, description." },
+    { figma_node: "6:121", code_component: "FeatureListItem", status: "proposed_new", props: { icon: "shield", title: "Fior di Latte & Fresh Mozzarella" }, notes: "Reuses the FeatureListItem proposed for 6:114." },
+    { figma_node: "6:127", code_component: "FeatureListItem", status: "proposed_new", props: { icon: "compass", title: "900°F Stone Hearth Wood Oven" }, notes: "Reuses the FeatureListItem proposed for 6:114." },
+    { figma_node: "6:133", code_component: "ImageCollage", status: "proposed_new", props: { images: ["figma-asset-6-134-story-img-collage.png", "figma-asset-6-135-story-img-collage.png"], layout: "2-up", radius: "radius-lg" }, notes: "Named 'collage' in Figma but photos sit side-by-side, not overlapped. Radius matches radius-lg exactly." },
+    { figma_node: "6:136", code_component: "Footer", status: "proposed_new", props: { background: "dark-surface" }, notes: "Dark near-black footer — see missing-dark-surface-token." },
+    { figma_node: "6:138", code_component: "FooterBrand", status: "proposed_new", props: {}, notes: "Wraps Logo (reused from 6:8), tagline paragraph, and social icon row." },
+    { figma_node: "6:139", code_component: "Logo", status: "proposed_new", props: { mark: "F", wordmark: "Forno Rosso" }, notes: "Reuses the Logo proposed for the header (6:8)." },
+    { figma_node: "6:145", code_component: "SocialIconLink", status: "proposed_new", props: { icon: "instagram", href: "#" }, notes: "Circular translucent-on-dark icon button; href undefined in design." },
+    { figma_node: "6:147", code_component: "SocialIconLink", status: "proposed_new", props: { icon: "facebook", href: "#" }, notes: "Reuses the SocialIconLink proposed for 6:145." },
+    { figma_node: "6:149", code_component: "SocialIconLink", status: "proposed_new", props: { icon: "twitter", href: "#" }, notes: "Reuses the SocialIconLink proposed for 6:145." },
+    { figma_node: "6:151", code_component: "FooterColumn", status: "proposed_new", props: { heading: "Kitchen Hours" }, notes: "Wraps 3 ScheduleRow instances." },
+    { figma_node: "6:154", code_component: "ScheduleRow", status: "proposed_new", props: { day: "Monday - Thursday", hours: "12:00 PM - 10:00 PM" }, notes: "Label/value row inside Kitchen Hours." },
+    { figma_node: "6:157", code_component: "ScheduleRow", status: "proposed_new", props: { day: "Friday - Saturday", hours: "12:00 PM - 11:30 PM" }, notes: "Reuses the ScheduleRow proposed for 6:154." },
+    { figma_node: "6:160", code_component: "ScheduleRow", status: "proposed_new", props: { day: "Sunday", hours: "1:00 PM - 9:30 PM" }, notes: "Reuses the ScheduleRow proposed for 6:154." },
+    { figma_node: "6:163", code_component: "FooterColumn", status: "proposed_new", props: { heading: "Pizzeria Location", address: "842 Rione Monti, Sourdough Avenue, Suite 100", phone: "(555) 392-7677", email: "ciao@fornorosso.pizza" }, notes: "Reuses the FooterColumn proposed for 6:151, with address content instead of a schedule." },
+    { figma_node: "6:170", code_component: "Divider", status: "proposed_new", props: { context: "footer" }, notes: "Full-width hairline rule above the copyright bar." },
+    { figma_node: "6:171", code_component: "FooterBottom", status: "proposed_new", props: { copyright: "© 2026 Forno Rosso Pizzeria. All rights reserved." }, notes: "Copyright text plus trailing link row." },
+    { figma_node: "6:174", code_component: "FooterLink", status: "proposed_new", props: { label: "Privacy Policy" }, notes: "Target URL undefined in the design." },
+    { figma_node: "6:175", code_component: "FooterLink", status: "proposed_new", props: { label: "Delivery Terms" }, notes: "Reuses the FooterLink proposed for 6:174." }
+  ];
+
+  const openQuestions = [
+    { id: "primary-red-hex-mismatch", topic: "Primary red color value differs from the existing design-system token", detail: "Every primary-red usage in this frame (hero CTA, logo badge, nav active underline, eyebrow labels, story icon badges) paints #C82D25, but tokens.json's color-primary is #b3261e — a visibly different, cooler/darker brick red.", arc_assumption: "Reuse the existing color-primary token (#b3261e) rather than introduce a second red — token values are design-system-bootstrap's to change.", blocking: true, options: [{id:"keep-existing", label:"#b3261e — current color-primary token"}, {id:"match-figma", label:"#C82D25 — exact red painted throughout this frame"}], assumed_option: "keep-existing" },
+    { id: "missing-dark-surface-token", topic: "No existing token for the near-black surface used in header/hero/footer", detail: "Header, hero section, footer, and the menu-card 'Add to Order' button all fill with #151212. tokens.json has no dark surface token — closest is color-fg (#2a1b12), a text color, not a background.", arc_assumption: "Map these backgrounds to color-fg for now and flag that a real inverse-surface token (e.g. color-surface-inverse) is needed from design-system-bootstrap.", blocking: true, options: [{id:"reuse-color-fg", label:"#2a1b12 — reuse existing color-fg as the dark surface"}, {id:"new-token", label:"#151212 — add a new inverse-surface token matching Figma exactly"}], assumed_option: "reuse-color-fg" },
+    { id: "button-dark-variant-missing", topic: "\"Add to Order\" button doesn't match either existing button alias", detail: "The repeated menu-card CTA is a solid near-black (#151212) fill with white label — it isn't button-primary (red) or button-secondary (white/outline red).", arc_assumption: "Treat it as a third 'dark' button variant, reusing radius-md shape convention, filled with the dark-surface value, pending real button-dark-* tokens.", blocking: true, options: [{id:"new-dark-variant", label:"Add a button-dark-background/foreground alias, reusing radius-md"}, {id:"reuse-primary", label:"Recolor these CTAs to button-primary (red) instead"}], assumed_option: "new-dark-variant" },
+    { id: "hero-secondary-button-on-dark", topic: "Hero's outline button needs a light-on-dark treatment", detail: "\"Explore Full Menu\" is transparent with a white 1px border/label on the hero's dark bg. Existing button-secondary-* tokens assume a light page (white fill, red border/text) and would render wrong here.", arc_assumption: "Introduce a light-on-dark outline treatment (transparent fill, color-fg-inverse border/text) scoped to dark sections.", blocking: true, options: [{id:"new-outline-on-dark", label:"Add a light-on-dark outline button treatment for dark sections"}, {id:"reuse-secondary", label:"Reuse button-secondary tokens as-is (near-invisible on hero bg)"}], assumed_option: "new-outline-on-dark" },
+    { id: "secondary-green-hex-drift", topic: "Delivery-banner green differs slightly from color-secondary", detail: "The delivery banner background and header's '30 mins' highlight both use #2A7043, vs. color-secondary #4b7f52 — same basil-green family, darker/more saturated here.", arc_assumption: "Reuse the existing color-secondary token; the drift is small enough not to block.", blocking: false },
+    { id: "card-border-hex-drift", topic: "Menu card border differs slightly from color-border", detail: "Menu item cards stroke with #EBE7DF vs. color-border #e4d6c3 — both light warm neutrals, very close.", arc_assumption: "Reuse the existing color-border token; treat drift as within tolerance.", blocking: false },
+    { id: "radius-scale-gaps", topic: "Several corner radii fall outside the existing radius scale", detail: "18px/20px circular icon badges and 24px hero-image corner don't match radius-sm/md/lg/pill (4/8/16/999) exactly.", arc_assumption: "Implement circular badges as true 50% radius (fixed-px mismatch doesn't apply) and use radius-lg for the hero image rather than adding a new step.", blocking: false },
+    { id: "section-divider-inconsistent", topic: "Section-heading divider rule appears in the menu section but not the story section", detail: "\"Popular Sourdough Pizzas\" (6:57) has a short red rule under it (6:58); the story section's matching heading pattern (6:110) doesn't.", arc_assumption: "Model SectionHeading with an optional divider prop, present only where the source frame draws it.", blocking: false },
+    { id: "cart-count-placeholder", topic: "Header cart badge count is a static \"3\"", detail: "The header cart button shows a hardcoded count of 3, with no empty-cart state drawn anywhere.", arc_assumption: "Build the count as a dynamic prop from real cart state; render 0 as hidden/absent since no empty state was designed.", blocking: false },
+    { id: "estimated-delivery-text-scope", topic: "Purpose/visibility of the header's live delivery-ETA status isn't specified", detail: "The header always shows \"Estimated delivery: 30 mins\" (value highlighted green), implying dynamic order state, but nothing indicates when it should show/hide/change.", arc_assumption: "Treat it as an always-visible header status slot with a static/placeholder ETA until real order-state wiring exists.", blocking: false },
+    { id: "fire-extinguisher-icon-name", topic: "Hero badge icon is named 'fire-extinguisher' but renders as a flame", detail: "The icon inside the 'Authentic Neapolitan Woodfired' chip is named 'fire-extinguisher' in the Figma layer tree, but its path reads as a flame — likely a stock icon-library id.", arc_assumption: "Implement the visual glyph shown (a flame) using whatever the team's real icon set calls it.", blocking: false }
+  ];
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  const mapBody = document.getElementById('map-body');
+  componentMap.forEach(row => {
+    const tr = document.createElement('tr');
+    const propsStr = Object.keys(row.props || {}).length
+      ? Object.entries(row.props).map(([k,v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : v}`).join('\n')
+      : '—';
+    tr.innerHTML = `
+      <td class="node">${esc(row.figma_node)}</td>
+      <td>${esc(row.code_component)}</td>
+      <td><span class="status-chip status-${row.status}">${esc(row.status)}</span></td>
+      <td><code class="props">${esc(propsStr)}</code></td>
+      <td class="notes">${esc(row.notes)}</td>
+    `;
+    mapBody.appendChild(tr);
+  });
+
+  const qBody = document.getElementById('q-body');
+  const sorted = [...openQuestions].sort((a,b) => (b.blocking === true) - (a.blocking === true));
+  sorted.forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'q-card ' + (q.blocking ? 'blocking' : 'nonblocking');
+    let optionsHtml = '';
+    if (q.options && q.options.length) {
+      optionsHtml = '<ul class="q-options">' + q.options.map(o =>
+        `<li>${esc(o.id)}: ${esc(o.label)}${o.id === q.assumed_option ? '<span class="assumed-tag">assumed</span>' : ''}</li>`
+      ).join('') + '</ul>';
+    }
+    div.innerHTML = `
+      <span class="q-flag ${q.blocking ? 'blocking' : 'nonblocking'}">${q.blocking ? 'Blocking' : 'Non-blocking'}</span>
+      <h4>${esc(q.topic)}</h4>
+      <p class="q-detail">${esc(q.detail)}</p>
+      ${optionsHtml}
+      <div class="q-assumption"><strong>arc's assumption (awaiting confirmation):</strong> ${esc(q.arc_assumption)}</div>
+    `;
+    qBody.appendChild(div);
+  });
+</script>
+</body>
+</html>
+
+<!-- arc:css-inlined -->
