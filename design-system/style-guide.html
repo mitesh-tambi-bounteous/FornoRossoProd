@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Forno Rosso — Design System Style Guide</title>
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="prototype-utils.css" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .guide-wrap { max-width: 1040px; margin: 0 auto; padding: var(--space-6); }
+  .guide-section { margin-bottom: var(--space-6); }
+  .guide-section > h2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+  .guide-section > p.lead {
+    color: var(--color-fg-muted);
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+  }
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--space-6) * 5), 1fr));
+    gap: var(--space-4);
+  }
+  .swatch {
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+  .swatch-fill {
+    height: calc(var(--space-6) * 2);
+  }
+  .swatch-label {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+  }
+  .swatch-label strong { display: block; color: var(--color-fg); }
+  .swatch-label span { color: var(--color-fg-muted); }
+  .dim-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-2) 0;
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+  }
+  .dim-row:last-child { border-bottom: none; }
+  .dim-name {
+    width: calc(var(--space-6) * 6);
+    font-size: var(--font-size-sm);
+    color: var(--color-fg);
+    font-weight: var(--font-weight-semibold);
+  }
+  .dim-bar { background: var(--color-primary); height: var(--space-3); border-radius: var(--radius-sm); }
+  .dim-value { font-size: var(--font-size-sm); color: var(--color-fg-muted); }
+  .radius-demo {
+    width: calc(var(--space-6) * 2);
+    height: calc(var(--space-6) * 2);
+    background: var(--color-accent);
+    border: var(--border-width-thin) solid var(--color-border);
+  }
+  .demo-box {
+    padding: var(--space-4);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+  }
+  .type-sample {
+    padding: var(--space-3) 0;
+  }
+  .weight-sample { font-size: var(--font-size-lg); }
+  .component-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .alias-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+  }
+  .alias-table th, .alias-table td {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+  }
+  .alias-table th { color: var(--color-fg-muted); font-weight: var(--font-weight-semibold); }
+  .alias-chip {
+    display: inline-block;
+    width: var(--space-4);
+    height: var(--space-4);
+    border-radius: var(--radius-sm);
+    border: var(--border-width-thin) solid var(--color-border);
+    vertical-align: middle;
+    margin-right: var(--space-2);
+  }
+  .field-demo { max-width: calc(var(--space-6) * 10); }
+</style>
+</head>
+<body class="surface-page">
+  <div class="guide-wrap">
+
+    <header class="guide-section">
+      <h1 class="text-heading">Forno Rosso — Design System</h1>
+      <p class="text-body text-muted">
+        Tokens and components for a wood-fired pizza restaurant web app: a warm cream
+        surface, oven-red primary, and rustic trattoria typography.
+      </p>
+    </header>
+
+    <!-- COLORS -->
+    <section class="guide-section">
+      <h2>Colors</h2>
+      <p class="lead">Base color tokens. Each swatch is rendered from its token's CSS variable.</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-bg);"></div>
+          <div class="swatch-label"><strong>color-bg</strong><span>#fbf6ef</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-surface);"></div>
+          <div class="swatch-label"><strong>color-surface</strong><span>#ffffff</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-fg);"></div>
+          <div class="swatch-label"><strong>color-fg</strong><span>#2a1b12</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-fg-muted);"></div>
+          <div class="swatch-label"><strong>color-fg-muted</strong><span>#6b5a4e</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-fg-inverse); border-bottom: var(--border-width-thin) solid var(--color-border);"></div>
+          <div class="swatch-label"><strong>color-fg-inverse</strong><span>#ffffff</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-primary);"></div>
+          <div class="swatch-label"><strong>color-primary</strong><span>#b3261e</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-primary-hover);"></div>
+          <div class="swatch-label"><strong>color-primary-hover</strong><span>#8f1e17</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-secondary);"></div>
+          <div class="swatch-label"><strong>color-secondary</strong><span>#4b7f52</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-accent);"></div>
+          <div class="swatch-label"><strong>color-accent</strong><span>#e3a008</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-border);"></div>
+          <div class="swatch-label"><strong>color-border</strong><span>#e4d6c3</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-fill" style="background: var(--color-shadow);"></div>
+          <div class="swatch-label"><strong>color-shadow</strong><span>#c9b8a2</span></div>
+        </div>
+      </div>
+      <p class="text-sm text-muted" style="margin-top: var(--space-3);">
+        color-fg on color-bg measures ~15.5:1 contrast — comfortably clears WCAG AA (4.5:1).
+      </p>
+    </section>
+
+    <!-- SPACING -->
+    <section class="guide-section">
+      <h2>Spacing</h2>
+      <p class="lead">space-1 through space-6, rendered as proportional bars.</p>
+      <div class="dim-row"><div class="dim-name">space-1</div><div class="dim-bar" style="width: var(--space-1);"></div><div class="dim-value">4px</div></div>
+      <div class="dim-row"><div class="dim-name">space-2</div><div class="dim-bar" style="width: var(--space-2);"></div><div class="dim-value">8px</div></div>
+      <div class="dim-row"><div class="dim-name">space-3</div><div class="dim-bar" style="width: var(--space-3);"></div><div class="dim-value">12px</div></div>
+      <div class="dim-row"><div class="dim-name">space-4</div><div class="dim-bar" style="width: var(--space-4);"></div><div class="dim-value">16px</div></div>
+      <div class="dim-row"><div class="dim-name">space-5</div><div class="dim-bar" style="width: var(--space-5);"></div><div class="dim-value">24px</div></div>
+      <div class="dim-row"><div class="dim-name">space-6</div><div class="dim-bar" style="width: var(--space-6);"></div><div class="dim-value">32px</div></div>
+    </section>
+
+    <!-- RADII -->
+    <section class="guide-section">
+      <h2>Corner radii</h2>
+      <p class="lead">radius-sm, radius-md, radius-lg, radius-pill.</p>
+      <div class="component-row">
+        <div><div class="radius-demo" style="border-radius: var(--radius-sm);"></div><p class="text-sm text-muted">radius-sm · 4px</p></div>
+        <div><div class="radius-demo" style="border-radius: var(--radius-md);"></div><p class="text-sm text-muted">radius-md · 8px</p></div>
+        <div><div class="radius-demo" style="border-radius: var(--radius-lg);"></div><p class="text-sm text-muted">radius-lg · 16px</p></div>
+        <div><div class="radius-demo" style="border-radius: var(--radius-pill);"></div><p class="text-sm text-muted">radius-pill · 999px</p></div>
+      </div>
+    </section>
+
+    <!-- FONT SIZES -->
+    <section class="guide-section">
+      <h2>Font sizes</h2>
+      <p class="text-sm" style="font-size: var(--font-size-sm);">font-size-sm — Margherita, Marinara, Diavola (14px)</p>
+      <p style="font-size: var(--font-size-md);">font-size-md — Margherita, Marinara, Diavola (16px)</p>
+      <p style="font-size: var(--font-size-lg);">font-size-lg — Margherita, Marinara, Diavola (20px)</p>
+      <p style="font-size: var(--font-size-xl);">font-size-xl — Margherita, Marinara, Diavola (28px)</p>
+    </section>
+
+    <!-- BORDER WIDTHS -->
+    <section class="guide-section">
+      <h2>Border widths</h2>
+      <div class="component-row">
+        <div class="demo-box" style="border: var(--border-width-thin) solid var(--color-primary);">border-width-thin · 1px</div>
+        <div class="demo-box" style="border: var(--border-width-thick) solid var(--color-primary);">border-width-thick · 2px</div>
+      </div>
+    </section>
+
+    <!-- LINE HEIGHTS -->
+    <section class="guide-section">
+      <h2>Line heights</h2>
+      <p class="type-sample" style="line-height: var(--line-height-tight); max-width: 32em;">
+        line-height-tight (1.2) — Wood-fired since 1998, our dough rests for three days before it ever sees the oven.
+      </p>
+      <p class="type-sample" style="line-height: var(--line-height-normal); max-width: 32em;">
+        line-height-normal (1.5) — Wood-fired since 1998, our dough rests for three days before it ever sees the oven.
+      </p>
+    </section>
+
+    <!-- FONT FAMILIES -->
+    <section class="guide-section">
+      <h2>Font families</h2>
+      <p class="type-sample" style="font-family: var(--font-family-heading); font-size: var(--font-size-lg);">
+        font-family-heading — Forno Rosso Pizzeria
+      </p>
+      <p class="type-sample" style="font-family: var(--font-family-body); font-size: var(--font-size-lg);">
+        font-family-body — Forno Rosso Pizzeria
+      </p>
+    </section>
+
+    <!-- FONT WEIGHTS -->
+    <section class="guide-section">
+      <h2>Font weights</h2>
+      <p class="weight-sample" style="font-weight: var(--font-weight-regular);">font-weight-regular (400) — Fresh mozzarella, San Marzano tomato</p>
+      <p class="weight-sample" style="font-weight: var(--font-weight-semibold);">font-weight-semibold (600) — Fresh mozzarella, San Marzano tomato</p>
+      <p class="weight-sample" style="font-weight: var(--font-weight-bold);">font-weight-bold (700) — Fresh mozzarella, San Marzano tomato</p>
+    </section>
+
+    <!-- SHADOWS -->
+    <section class="guide-section">
+      <h2>Shadows</h2>
+      <div class="component-row">
+        <div class="demo-box" style="box-shadow: var(--shadow-sm);">shadow-sm</div>
+        <div class="demo-box" style="box-shadow: var(--shadow-md);">shadow-md</div>
+      </div>
+    </section>
+
+    <!-- BORDER (composite) -->
+    <section class="guide-section">
+      <h2>Border (composite)</h2>
+      <div class="demo-box" style="border: var(--border-default);">border-default — width: border-width-thin, style: solid, color: color-border</div>
+    </section>
+
+    <!-- GRADIENT -->
+    <section class="guide-section">
+      <h2>Gradient</h2>
+      <div class="demo-box" style="background: var(--gradient-hero); color: var(--color-fg-inverse); min-height: calc(var(--space-6) * 3); display:flex; align-items:center;">
+        gradient-hero — color-primary → color-primary-hover
+      </div>
+    </section>
+
+    <!-- COMPONENTS: BUTTONS -->
+    <section class="guide-section">
+      <h2>Buttons</h2>
+      <p class="lead">Built from prototype-utils.css using button-* alias tokens.</p>
+      <div class="component-row">
+        <button class="btn btn-primary">Order Now</button>
+        <button class="btn btn-secondary">View Menu</button>
+      </div>
+      <table class="alias-table">
+        <thead><tr><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>button-primary-background</td><td><span class="alias-chip" style="background: var(--button-primary-background);"></span>color-primary</td></tr>
+          <tr><td>button-primary-foreground</td><td><span class="alias-chip" style="background: var(--button-primary-foreground); border: var(--border-width-thin) solid var(--color-border);"></span>color-fg-inverse</td></tr>
+          <tr><td>button-primary-border</td><td><span class="alias-chip" style="background: var(--button-primary-border);"></span>color-primary</td></tr>
+          <tr><td>button-primary-radius</td><td>radius-md (8px)</td></tr>
+          <tr><td>button-secondary-background</td><td><span class="alias-chip" style="background: var(--button-secondary-background); border: var(--border-width-thin) solid var(--color-border);"></span>color-surface</td></tr>
+          <tr><td>button-secondary-foreground</td><td><span class="alias-chip" style="background: var(--button-secondary-foreground);"></span>color-primary</td></tr>
+          <tr><td>button-secondary-border</td><td><span class="alias-chip" style="background: var(--button-secondary-border);"></span>color-primary</td></tr>
+          <tr><td>button-secondary-radius</td><td>radius-md (8px)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- COMPONENTS: CARD -->
+    <section class="guide-section">
+      <h2>Card</h2>
+      <div class="card" style="max-width: calc(var(--space-6) * 10);">
+        <h3 class="card-title">Diavola</h3>
+        <p class="card-body">San Marzano tomato, fior di latte, spicy salami, chili oil.</p>
+        <div class="card-footer">
+          <button class="btn btn-primary">Add to order</button>
+          <span class="chip">Spicy</span>
+        </div>
+      </div>
+      <table class="alias-table" style="margin-top: var(--space-4);">
+        <thead><tr><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>card-default-background</td><td><span class="alias-chip" style="background: var(--card-default-background); border: var(--border-width-thin) solid var(--color-border);"></span>color-surface</td></tr>
+          <tr><td>card-default-foreground</td><td><span class="alias-chip" style="background: var(--card-default-foreground);"></span>color-fg</td></tr>
+          <tr><td>card-default-border</td><td><span class="alias-chip" style="background: var(--card-default-border);"></span>color-border</td></tr>
+          <tr><td>card-default-radius</td><td>radius-lg (16px)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- COMPONENTS: CHIP -->
+    <section class="guide-section">
+      <h2>Chip</h2>
+      <div class="component-row">
+        <span class="chip">New</span>
+        <span class="chip">Vegetarian</span>
+        <span class="chip">Wood-fired</span>
+      </div>
+      <table class="alias-table">
+        <thead><tr><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>chip-default-background</td><td><span class="alias-chip" style="background: var(--chip-default-background);"></span>color-accent</td></tr>
+          <tr><td>chip-default-foreground</td><td><span class="alias-chip" style="background: var(--chip-default-foreground);"></span>color-fg</td></tr>
+          <tr><td>chip-default-radius</td><td>radius-pill (999px)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- COMPONENTS: FORM CONTROLS -->
+    <section class="guide-section">
+      <h2>Form controls</h2>
+      <div class="field-demo">
+        <label class="field-label" for="guide-name">Delivery address</label>
+        <input class="field-input" id="guide-name" type="text" placeholder="123 Via Roma" />
+        <p class="field-hint">We deliver within 5km of the pizzeria.</p>
+      </div>
+      <table class="alias-table" style="margin-top: var(--space-4);">
+        <thead><tr><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>field-default-background</td><td><span class="alias-chip" style="background: var(--field-default-background); border: var(--border-width-thin) solid var(--color-border);"></span>color-surface</td></tr>
+          <tr><td>field-default-foreground</td><td><span class="alias-chip" style="background: var(--field-default-foreground);"></span>color-fg</td></tr>
+          <tr><td>field-default-border</td><td><span class="alias-chip" style="background: var(--field-default-border);"></span>color-border</td></tr>
+          <tr><td>field-default-radius</td><td>radius-sm (4px)</td></tr>
+          <tr><td>field-focus-border</td><td><span class="alias-chip" style="background: var(--field-focus-border);"></span>color-primary — try focusing the input above</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- LAYOUT HELPERS -->
+    <section class="guide-section">
+      <h2>Layout helpers</h2>
+      <p class="lead">.stack and .row utility classes, built from the spacing scale.</p>
+      <div class="stack" style="border: var(--border-width-thin) solid var(--color-border); padding: var(--space-4); border-radius: var(--radius-md);">
+        <div class="row">
+          <span class="chip">stack gap: space-4</span>
+          <span class="chip">row gap: space-3</span>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary">Checkout</button>
+          <button class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
